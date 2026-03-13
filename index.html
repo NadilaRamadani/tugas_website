@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Idul Fitri 1447 H • Nadila Ramadani</title>
+    
+    <!-- Bootstrap CSS (ringan) -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome (untuk ikon) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        /* CSS KUSTOM - Dibuat seminimal mungkin tapi tetap cantik */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+            background: #0a1f0a;
+            color: white;
+        }
+        
+        /* Navigasi simple */
+        .navbar {
+            background: rgba(10, 31, 10, 0.95) !important;
+            backdrop-filter: blur(10px);
+            border-bottom: 2px solid #ffd966;
+            padding: 12px 0;
+        }
+        
+        .navbar-brand {
+            font-weight: 700;
+            color: #ffd966 !important;
+            font-size: 1.5rem;
+        }
+        
+        .nav-link {
+            color: white !important;
+            margin: 0 10px;
+            font-weight: 500;
+            transition: 0.3s;
+            border-radius: 30px;
+            padding: 8px 18px !important;
+        }
+        
+        .nav-link:hover, .nav-link.active {
+            background: #ffd966;
+            color: #0a1f0a !important;
+        }
+        
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('foto-nadila.jpg') center/cover fixed;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 100px 20px;
+            margin-top: 76px;
+        }
+        
+        .hero-content {
+            max-width: 800px;
+        }
+        
+        .hero h1 {
+            font-size: clamp(2.5rem, 8vw, 5rem);
+            font-weight: 800;
+            color: #ffd966;
+            text-shadow: 0 5px 15px rgba(0,0,0,0.5);
+            margin-bottom: 15px;
+        }
+        
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 25px;
+            opacity: 0.95;
+        }
+        
+        .badge-nim {
+            background: #ffd966;
+            color: #0a1f0a;
+            padding: 10px 30px;
+            border-radius: 50px;
+            font-weight: 700;
+            display: inline-block;
+            font-size: 1.1rem;
+        }
+        
+        /* Section umum */
+        .section {
+            padding: 80px 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        
+        .section-title h2 {
+            font-size: 2.8rem;
+            font-weight: 700;
+            color: #ffd966;
+            margin-bottom: 10px;
+        }
+        
+        .section-title p {
+            font-size: 1.1rem;
+            opacity: 0.8;
+        }
+        
+        /* Card Galeri */
+        .gallery-card {
+            background: rgba(255,255,255,0.05);
+            border-radius: 20px;
+            overflow: hidden;
+            border: 1px solid rgba(255,217,102,0.3);
+            transition: 0.3s;
+            height: 100%;
+        }
+        
+        .gallery-card:hover {
+            transform: translateY(-10px);
+            border-color: #ffd966;
+            box-shadow: 0 10px 30px rgba(255,217,102,0.2);
+        }
+        
+        .gallery-img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+        }
+        
+        .gallery-info {
+            padding: 20px;
+        }
+        
+        .gallery-info h3 {
+            color: #ffd966;
+            font-size: 1.2rem;
+            margin-bottom: 8px;
+        }
+        
+        .gallery-info p {
+            font-size: 0.95rem;
+            opacity: 0.8;
+            margin: 0;
+        }
+        
+        /* Card Video */
+        .video-card {
+            background: rgba(255,255,255,0.05);
+            border-radius: 20px;
+            overflow: hidden;
+            border: 1px solid rgba(255,217,102,0.3);
+            height: 100%;
+        }
+        
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            background: #000;
+        }
+        
+        .video-container video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+        
+        .video-info {
+            padding: 20px;
+            text-align: center;
+        }
+        
+        .video-info h3 {
+            color: #ffd966;
+            font-size: 1.2rem;
+            margin: 0;
+        }
+        
+        /* About Section */
+        .about-card {
+            background: rgba(255,255,255,0.05);
+            border-radius: 30px;
+            padding: 40px;
+            border: 1px solid #ffd966;
+            text-align: center;
+        }
+        
+        .profile-img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid #ffd966;
+            margin-bottom: 20px;
+        }
+        
+        .about-text h3 {
+            color: #ffd966;
+            font-size: 2rem;
+            margin-bottom: 10px;
+        }
+        
+        .nim-box {
+            background: #ffd966;
+            color: #0a1f0a;
+            padding: 8px 30px;
+            border-radius: 50px;
+            display: inline-block;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+        
+        .location {
+            background: #1a3a1a;
+            padding: 10px 30px;
+            border-radius: 50px;
+            display: inline-block;
+            margin-top: 20px;
+            border: 1px solid #ffd966;
+        }
+        
+        /* Footer */
+        footer {
+            background: #051005;
+            text-align: center;
+            padding: 40px 0;
+            border-top: 2px solid #ffd966;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .section-title h2 {
+                font-size: 2rem;
+            }
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- NAVBAR -->
+    <nav class="navbar navbar-expand-lg fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#"><i class="fas fa-moon me-2"></i>Nadila Fitri</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon" style="filter: invert(1);"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link active" href="#home">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#galeri">Galeri</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#video">Video</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#tentang">Tentang</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HOME -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>✨ Selamat Idul Fitri ✨</h1>
+            <p>1447 Hijriah • 1 Syawal</p>
+            <p class="mb-4">Minal 'aidin wal faizin, mohon maaf lahir dan batin</p>
+            <div class="badge-nim">
+                <i class="fas fa-user-circle me-2"></i>Nadila Ramadani | 2523166 | Palupuh
+            </div>
+        </div>
+    </section>
+
+    <!-- GALERI FOTO -->
+    <section id="galeri" class="section">
+        <div class="container">
+            <div class="section-title">
+                <h2>📸 Galeri Lebaran</h2>
+                <p>Momen spesial bersama keluarga tercinta</p>
+            </div>
+            
+            <div class="row g-4">
+                <!-- Foto 1 -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="gallery-card">
+                        <img src="foto1.jpg" alt="Shalat Ied" class="gallery-img">
+                        <div class="gallery-info">
+                            <h3>Shalat Ied di Lapangan</h3>
+                            <p>Pagi 1 Syawal, berjamaah dengan warga Palupuh</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Foto 2 -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="gallery-card">
+                        <img src="foto2.jpg" alt="Sungkem" class="gallery-img">
+                        <div class="gallery-info">
+                            <h3>Sungkem kepada Orang Tua</h3>
+                            <p>Momen haru memohon maaf pada ayah dan ibu</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Foto 3 -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="gallery-card">
+                        <img src="foto3.jpg" alt="Keluarga Besar" class="gallery-img">
+                        <div class="gallery-info">
+                            <h3>Kumpul Keluarga Besar</h3>
+                            <p>Bersama sanak saudara di rumah nenek</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Foto 4 -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="gallery-card">
+                        <img src="foto4.jpg" alt="Makan Ketupat" class="gallery-img">
+                        <div class="gallery-info">
+                            <h3>Hidangan Lebaran</h3>
+                            <p>Ketupat, opor, dan rendang buatan mama</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Foto 5 -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="gallery-card">
+                        <img src="foto5.jpg" alt="Bersama Teman" class="gallery-img">
+                        <div class="gallery-info">
+                            <h3>Halal Bihalal</h3>
+                            <p>Bersama teman-teman masa kecil</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Foto 6 -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="gallery-card">
+                        <img src="foto6.jpg" alt="THR" class="gallery-img">
+                        <div class="gallery-info">
+                            <h3>Bagi-bagi THR</h3>
+                            <p>Kebahagiaan anak-anak keponakan</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- VIDEO -->
+    <section id="video" class="section bg-dark">
+        <div class="container">
+            <div class="section-title">
+                <h2>🎥 Video Kegiatan</h2>
+                <p>Rekaman momen tak terlupakan</p>
+            </div>
+            
+            <div class="row g-4">
+                <!-- Video 1 -->
+                <div class="col-md-6">
+                    <div class="video-card">
+                        <div class="video-container">
+                            <video controls poster="poster1.jpg">
+                                <source src="video1.mp4" type="video/mp4">
+                            </video>
+                        </div>
+                        <div class="video-info">
+                            <h3>Suasana Shalat Ied</h3>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Video 2 -->
+                <div class="col-md-6">
+                    <div class="video-card">
+                        <div class="video-container">
+                            <video controls poster="poster2.jpg">
+                                <source src="video2.mp4" type="video/mp4">
+                            </video>
+                        </div>
+                        <div class="video-info">
+                            <h3>Silaturahmi Keluarga</h3>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Video 3 -->
+                <div class="col-md-6">
+                    <div class="video-card">
+                        <div class="video-container">
+                            <video controls poster="poster3.jpg">
+                                <source src="video3.mp4" type="video/mp4">
+                            </video>
+                        </div>
+                        <div class="video-info">
+                            <h3>Makan Bersama</h3>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Video 4 -->
+                <div class="col-md-6">
+                    <div class="video-card">
+                        <div class="video-container">
+                            <video controls poster="poster4.jpg">
+                                <source src="video4.mp4" type="video/mp4">
+                            </video>
+                        </div>
+                        <div class="video-info">
+                            <h3>Malam Takbiran</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TENTANG -->
+    <section id="tentang" class="section">
+        <div class="container">
+            <div class="section-title">
+                <h2>👤 Tentang Saya</h2>
+                <p>Kenali lebih dekat</p>
+            </div>
+            
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="about-card">
+                        <img src="profil.jpg" alt="Nadila Ramadani" class="profile-img">
+                        <div class="about-text">
+                            <h3>Nadila Ramadani</h3>
+                            <div class="nim-box">NIM: 2523166</div>
+                            <p class="px-md-5">
+                                Halo! Saya Nadila, lahir dan besar di <strong>Palupuh</strong>, Sumatera Barat. 
+                                Website ini saya buat untuk mendokumentasikan momen indah Idul Fitri 1447 H 
+                                bersama keluarga tercinta. Semoga berkah Idul Fitri selalu menyertai kita semua.
+                            </p>
+                            <div class="location">
+                                <i class="fas fa-map-marker-alt me-2"></i>Palupuh, Sumatera Barat
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="container">
+            <p class="mb-2 fs-4">Taqabbalallahu minna wa minkum</p>
+            <p class="mb-3">Semoga amal ibadah kita diterima Allah SWT</p>
+            <p class="mb-0"><i class="fas fa-copyright me-1"></i>2024 Nadila Ramadani - 2523166</p>
+            <p class="mt-2"><i class="fas fa-star"></i> <i class="fas fa-star"></i> <i class="fas fa-star"></i></p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Smooth scroll
+        document.querySelectorAll('a[href^="#"]').forEach(a => {
+            a.addEventListener('click', function(e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({behavior: 'smooth'});
+            });
+        });
+    </script>
+</body>
+</html>
